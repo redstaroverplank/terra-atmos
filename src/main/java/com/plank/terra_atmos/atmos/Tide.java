@@ -34,7 +34,7 @@ public class Tide {
             BlockPos blockPos = BlockPos.containing(px + (double)random.nextInt(17) - 8, py + (double)random.nextInt(17) - 8, pz + (double)random.nextInt(17) - 8);
             int brightness = level.getBrightness(LightLayer.SKY, blockPos);
             float magnification = 0.01f;
-            if (level.dimension().location().getPath().equals("overworld") && py >= 60 && py <= 70 && brightness > 5)
+            if (level.dimension().location().getPath().equals("overworld") && py >= 60 && py <= 90 && brightness > 5)
                 moodiness += (float) brightness * magnification / 15;
             else moodiness = Math.max(moodiness - (magnification / 20), 0.0f);
             if (moodiness >= 1.0F) {
@@ -56,7 +56,7 @@ public class Tide {
                     };
                 }
                 if (sound != null) {
-                    manager.play(new SimpleSoundInstance(sound, SoundSource.AMBIENT, 1.0f, 1.0F, random, px + dx / v, py + dy / v, pz + dz / v));
+                    manager.play(new SimpleSoundInstance(sound, SoundSource.AMBIENT,  1.0f - ((float)(py-60) / 30), 1.0F, random, px + dx / v, py + dy / v, pz + dz / v));
                 }
                 moodiness = 0.0F;
             }
