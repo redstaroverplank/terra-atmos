@@ -36,7 +36,7 @@ public class WildLife {
             BlockPos blockPos = BlockPos.containing(px + (double)random.nextInt(17) - 8, py + (double)random.nextInt(17) - 8, pz + (double)random.nextInt(17) - 8);
             int brightness = level.getBrightness(LightLayer.SKY, blockPos);
             float magnification = 0.002f;
-            if (brightness > 5) moodiness += (float)brightness * magnification / 15;
+            if (py >= 64 && py <= 80 && brightness > 5) moodiness += (float) brightness * magnification / 15;
             else moodiness = Math.max(moodiness - (magnification / 20), 0.0f);
             if (moodiness >= 1.0F) {
                 double dx = (double)blockPos.getX() + 0.5D - px;

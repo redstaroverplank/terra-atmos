@@ -34,10 +34,8 @@ public class Tide {
             BlockPos blockPos = BlockPos.containing(px + (double)random.nextInt(17) - 8, py + (double)random.nextInt(17) - 8, pz + (double)random.nextInt(17) - 8);
             int brightness = level.getBrightness(LightLayer.SKY, blockPos);
             float magnification = 0.01f;
-            if(py>=60) {
-                if (brightness > 5) moodiness += (float) brightness * magnification / 15;
-                else moodiness = Math.max(moodiness - (magnification / 20), 0.0f);
-            }
+            if (py >= 60 && py <= 70 && brightness > 5) moodiness += (float) brightness * magnification / 15;
+            else moodiness = Math.max(moodiness - (magnification / 20), 0.0f);
             if (moodiness >= 1.0F) {
                 double dx = (double)blockPos.getX() + 0.5D - px;
                 double dy = (double)blockPos.getY() + 0.5D - py;
