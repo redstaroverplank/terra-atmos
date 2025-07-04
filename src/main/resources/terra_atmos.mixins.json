@@ -1,0 +1,21 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.plank.terra_atmos.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "terra_atmos.refmap.json",
+  "mixins": [
+    "BarrelBlockEntityMixin",
+    "InventoryMixin"
+  ],
+  "client": [
+    "Core",
+    "WaterFluidMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  }
+}
