@@ -36,7 +36,7 @@ public class Wind {
         BlockPos blockPos = BlockPos.containing(px + (double)random.nextInt(17) - 8, py + (double)random.nextInt(17) - 8, pz + (double)random.nextInt(17) - 8);
         int brightness = level.getBrightness(LightLayer.SKY, blockPos);
         float magnification = 0.005f;
-        if(py>=64) {
+        if(py >= 60) {
             if (brightness > 5) moodiness += (float) brightness * force * magnification / 15;
             else moodiness = Math.max(moodiness - (magnification / 20), 0.0f);
         }
