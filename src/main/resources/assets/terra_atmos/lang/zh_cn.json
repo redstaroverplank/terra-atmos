@@ -1,0 +1,13 @@
+{
+  "subtitles.ambient.terra_atmos.wind": "风声",
+  "subtitles.ambient.terra_atmos.wave": "潮水的咆哮",
+  "subtitles.ambient.terra_atmos.water": "平静的波涛",
+  "subtitles.ambient.terra_atmos.wildlife.spring": "勃勃生机",
+  "subtitles.ambient.terra_atmos.wildlife.summer": "万物竞发",
+  "subtitles.ambient.terra_atmos.wildlife.sea": "海鸥：鸣叫",
+  "subtitles.entity.player.terra_atmos.draw.armor": "拿出盔甲",
+  "subtitles.entity.player.terra_atmos.draw.weapon": "拿出武器",
+  "subtitles.entity.player.terra_atmos.draw.tool": "拿出工具",
+  "subtitles.entity.player.terra_atmos.draw.food": "拿出食物",
+  "subtitles.entity.player.terra_atmos.draw.generic": "拿出物品"
+}

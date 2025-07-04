@@ -1,0 +1,13 @@
+{
+  "subtitles.ambient.terra_atmos.wind": "Wind",
+  "subtitles.ambient.terra_atmos.wave": "Tide",
+  "subtitles.ambient.terra_atmos.water": "Fluctuates",
+  "subtitles.ambient.terra_atmos.wildlife.spring": "Vitality",
+  "subtitles.ambient.terra_atmos.wildlife.summer": "Thriving",
+  "subtitles.ambient.terra_atmos.wildlife.sea": "Seagull:Tweet",
+  "subtitles.entity.player.terra_atmos.draw.armor": "Take out armor",
+  "subtitles.entity.player.terra_atmos.draw.weapon": "Take out weapon",
+  "subtitles.entity.player.terra_atmos.draw.tool": "Take out tool",
+  "subtitles.entity.player.terra_atmos.draw.food": "Take out food",
+  "subtitles.entity.player.terra_atmos.draw.generic": "Take out item"
+}

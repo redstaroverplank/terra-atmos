@@ -1,0 +1,156 @@
+{
+    "ambient.wind.spring": {
+        "sounds": [
+            "terra_atmos:wind/wind_snippet1",
+            "terra_atmos:wind/wind_snippet2",
+            "terra_atmos:wind/wind_snippet3"
+        ],
+        "subtitle": "subtitles.ambient.terra_atmos.wind"
+    },
+    "ambient.wind.summer": {
+        "sounds": [
+            "terra_atmos:wind/wind_snippet3",
+            "terra_atmos:wind/wind_snippet4",
+            "terra_atmos:wind/wind_snippet5"
+        ],
+        "subtitle": "subtitles.ambient.terra_atmos.wind"
+    },
+    "ambient.wind.fall": {
+        "sounds": [
+            "terra_atmos:wind/wind_hit1",
+            "terra_atmos:wind/wind_hit2",
+            "terra_atmos:wind/wind_hit3"
+        ],
+        "subtitle": "subtitles.ambient.terra_atmos.wind"
+    },
+    "ambient.wind.winter": {
+        "sounds": [
+            "terra_atmos:wind/wind_moan1",
+            "terra_atmos:wind/wind_moan2",
+            "terra_atmos:wind/wind_moan3"
+        ],
+        "subtitle": "subtitles.ambient.terra_atmos.wind"
+    },
+    "ambient.wave": {
+        "sounds": [
+            "terra_atmos:water/wave1",
+            "terra_atmos:water/wave2",
+            "terra_atmos:water/wave3",
+            "terra_atmos:water/wave4",
+            "terra_atmos:water/wave5",
+            "terra_atmos:water/wave6"
+        ],
+        "subtitle": "subtitles.ambient.terra_atmos.wave"
+    },
+    "ambient.water": {
+        "sounds": [
+            "terra_atmos:water/lake1",
+            "terra_atmos:water/lake2",
+            "terra_atmos:water/lake3"
+        ],
+        "subtitle": "subtitles.ambient.terra_atmos.water"
+    },
+    "ambient.cicada": {
+        "sounds": [
+            "terra_atmos:wildlife/critter4",
+            "terra_atmos:wildlife/critter5",
+            "terra_atmos:wildlife/critter6",
+            "terra_atmos:wildlife/critter7",
+            "terra_atmos:wildlife/critter8"
+        ],
+        "subtitle": "subtitles.ambient.terra_atmos.wildlife.summer"
+    },
+    "ambient.bird": {
+        "sounds": [
+            "terra_atmos:wildlife/chicka1",
+            "terra_atmos:wildlife/chicka2",
+            "terra_atmos:wildlife/chicka3",
+            "terra_atmos:wildlife/chirp1",
+            "terra_atmos:wildlife/chirp2",
+            "terra_atmos:wildlife/chirp3",
+            "terra_atmos:wildlife/squeek1",
+            "terra_atmos:wildlife/squeek2",
+            "terra_atmos:wildlife/squeek3",
+            "terra_atmos:wildlife/flit1"
+        ],
+        "subtitle": "subtitles.ambient.terra_atmos.wildlife.spring"
+    },
+    "ambient.seabird": {
+        "sounds": [
+            "terra_atmos:wildlife/coastbird1",
+            "terra_atmos:wildlife/coastbird2",
+            "terra_atmos:wildlife/coastbird3",
+            "terra_atmos:wildlife/coastbird4",
+            "terra_atmos:wildlife/coastbird5",
+            "terra_atmos:wildlife/coastbird6",
+            "terra_atmos:wildlife/coastbird7",
+            "terra_atmos:wildlife/seagulls_ambient1",
+            "terra_atmos:wildlife/seagulls_ambient2",
+            "terra_atmos:wildlife/seagulls_ambient3",
+            "terra_atmos:wildlife/seagulls_ambient4",
+            "terra_atmos:wildlife/seagulls_ambient5"
+        ],
+        "subtitle": "subtitles.ambient.terra_atmos.wildlife.sea"
+    },
+    "ambient.cave": {
+        "sounds": [
+            "terra_atmos:cave/rumble1",
+            "terra_atmos:cave/rumble2",
+            "terra_atmos:cave/rumble3"
+        ],
+        "subtitle": "subtitles.ambient.sound"
+    },
+    "block.water.ambient": {
+        "sounds": [
+            "terra_atmos:water/flow1",
+            "terra_atmos:water/flow2",
+            "terra_atmos:water/flow3"
+        ],
+        "subtitle": "subtitles.block.water.ambient"
+    },
+    "block.water.drip": {
+        "sounds": [
+            "terra_atmos:water/rain_drip1",
+            "terra_atmos:water/rain_drip2",
+            "terra_atmos:water/rain_drip3",
+            "terra_atmos:water/rain_drip4"
+        ],
+        "subtitle": "subtitles.block.tfc.barrel.drip"
+    },
+    "entity.player.draw.armor": {
+        "sounds": [
+            "terra_atmos:item/armor_draw"
+        ],
+        "subtitle": "subtitles.entity.player.terra_atmos.draw.armor"
+    },
+    "entity.player.draw.weapon.melee": {
+        "sounds": [
+            "terra_atmos:item/sword_draw"
+        ],
+        "subtitle": "subtitles.entity.player.terra_atmos.draw.weapon"
+    },
+    "entity.player.draw.weapon.ranged": {
+        "sounds": [
+            "terra_atmos:item/bow_draw"
+        ],
+        "subtitle": "subtitles.entity.player.terra_atmos.draw.weapon"
+    },
+    "entity.player.draw.tool": {
+        "sounds": [
+            "terra_atmos:item/tool_draw"
+        ],
+        "subtitle": "subtitles.entity.player.terra_atmos.draw.tool"
+    },
+    "entity.player.draw.food": {
+        "sounds": [
+            "terra_atmos:item/food_draw"
+        ],
+        "subtitle": "subtitles.entity.player.terra_atmos.draw.food"
+    },
+    "entity.player.draw.generic": {
+        "sounds": [
+            "terra_atmos:item/generic_draw"
+        ],
+        "subtitle": "subtitles.entity.player.terra_atmos.draw.generic"
+    }
+}

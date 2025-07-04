@@ -1,0 +1,50 @@
+{
+    "entity.player.splash": {
+        "sounds": [
+            "terra_atmos:water/water_jumpin"
+        ],
+        "subtitle": "subtitles.entity.generic.splash"
+    },
+    "entity.player.splash.high_speed": {
+        "sounds": [
+            "terra_atmos:water/water_divein"
+        ],
+        "subtitle": "subtitles.entity.generic.splash"
+    },
+    "music.game": {
+        "replace": true,
+        "sounds": [
+            {
+                "name": "tfc:music/m0-dreams_of_the_phae",
+                "stream": true
+            },
+            {
+                "name": "tfc:music/m1-firmavista",
+                "stream": true
+            },
+            {
+                "name": "tfc:music/m2-sycamore_heights",
+                "stream": true
+            },
+            {
+                "name": "tfc:music/m3-terrafirmacraft",
+                "stream": true
+            },
+            {
+                "name": "tfc:music/m4-through_the_willows",
+                "stream": true
+            },
+            {
+                "name": "terra_atmos:treeoflife",
+                "stream": true
+            }
+        ]
+    },
+    "entity.generic.big_fall": {
+        "sounds": [
+            "terra_atmos:fallbig1",
+            "terra_atmos:fallbig2"
+        ],
+        "subtitle": "subtitles.entity.generic.big_fall"
+    }
+}
