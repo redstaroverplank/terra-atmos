@@ -22,7 +22,6 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 @OnlyIn(Dist.CLIENT)
 public class Wind {
     private static float moodiness = 0.0f;
-    private SoundEvent sound;
     private static final LocalPlayer player = (LocalPlayer) ClientHelpers.getPlayer();
     public Season season = Calendars.get(player.level().isClientSide).getCalendarMonthOfYear().getSeason();
     public Wind() {
@@ -36,7 +35,7 @@ public class Wind {
         float voice;
         BlockPos blockPos = BlockPos.containing(px + (double)random.nextInt(17) - 8, py + (double)random.nextInt(17) - 8, pz + (double)random.nextInt(17) - 8);
         int brightness = level.getBrightness(LightLayer.SKY, blockPos);
-        float magnification = 0.002f;
+        float magnification = 0.005f;
         if(level.dimension().location().getPath().equals("overworld") && py >= 60) {
             if (brightness > 5) moodiness += (float) brightness * force * magnification / 15;
             else moodiness = Math.max(moodiness - (magnification / 20), 0.0f);
@@ -54,22 +53,15 @@ public class Wind {
             double distance = Math.sqrt(dx * dx + dy * dy + dz * dz);
             double v = (distance + 2) * distance;
             SoundManager manager = Minecraft.getInstance().getSoundManager();
-            switch (season){
-                case SPRING:
-                    sound = Sounds.SPRING_WIND.get();
-                    break;
-                case SUMMER:
-                    sound = Sounds.SUMMER_WIND.get();
-                    break;
-                case FALL:
-                    sound = Sounds.FALL_WIND.get();
-                    break;
-                case WINTER:
-                    sound = Sounds.WINTER_WIND.get();
-            }
-            if (py<64) sound = Sounds.CAVE.get();
+            SoundEvent soundEvent = switch (season) {
+                case SPRING -> Sounds.SPRING_WIND.get();
+                case SUMMER -> Sounds.SUMMER_WIND.get();
+                case FALL -> Sounds.FALL_WIND.get();
+                case WINTER -> Sounds.WINTER_WIND.get();
+            };
+            if (py<64) soundEvent = Sounds.CAVE.get();
             SimpleSoundInstance sound = new SimpleSoundInstance(
-                    this.sound,
+                    soundEvent,
                     SoundSource.AMBIENT,
                     voice,
                     1.0F,

@@ -46,21 +46,19 @@ public class Tide {
                 SoundManager manager = Minecraft.getInstance().getSoundManager();
                 Holder<Biome> biomeHolder = level.getBiome(blockPos);
                 Optional<ResourceKey<Biome>> biomeKey = biomeHolder.unwrapKey();
-                SoundEvent sound = null;
                 if(biomeKey.isPresent()){
-                    sound = switch (biomeKey.get().location().getPath()) {
+                    SoundEvent sound = switch (biomeKey.get().location().getPath()) {
                         case "lake", "river" -> Sounds.WATER.get();
                         case "shore", "tidal_flats", "ocean", "ocean_reef", "deep_ocean", "deep_ocean_trench" ->
                                 Sounds.WAVE.get();
                         default -> null;
                     };
+                    float light = (float)(level.getBrightness(LightLayer.SKY, player.blockPosition()) + 5) /20;
+                    float height = 1 - (float)(py-60) / 30;
+                    if (sound == null) return;
+                    manager.play(new SimpleSoundInstance(sound, SoundSource.AMBIENT, light * height, 1.0F, random, px + dx / v, py + dy / v, pz + dz / v));
+                    moodiness = 0.0F;
                 }
-                float light = (float)(level.getBrightness(LightLayer.SKY, player.blockPosition()) + 5) /20;
-                float height = (float)(py-60) / 30;
-                if (sound != null) {
-                    manager.play(new SimpleSoundInstance(sound, SoundSource.AMBIENT, Math.max(light - height, 0.1f), 1.0F, random, px + dx / v, py + dy / v, pz + dz / v));
-                }
-                moodiness = 0.0F;
             }
         }
 
