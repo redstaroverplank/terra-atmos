@@ -35,7 +35,7 @@ public class WildLife {
             RandomSource random = level.getRandom();
             BlockPos blockPos = BlockPos.containing(px + (double)random.nextInt(17) - 8, py + (double)random.nextInt(17) - 8, pz + (double)random.nextInt(17) - 8);
             int brightness = level.getBrightness(LightLayer.SKY, blockPos);
-            float magnification = 0.0009f;
+            float magnification = 0.002f;
             if (level.dimension().location().getPath().equals("overworld") && py >= 64 && py <= 128 && brightness > 5)
                 moodiness += (float) brightness * magnification / 15;
             else moodiness = Math.max(moodiness - (magnification / 20), 0.0f);
@@ -47,6 +47,7 @@ public class WildLife {
                 double v = (distance + 2) * distance;
                 SoundManager manager = Minecraft.getInstance().getSoundManager();
                 float temperature = Climate.getTemperature(level, blockPos);
+                float rainfall = Climate.getRainfall(level, blockPos);
                 Holder<Biome> biomeHolder = level.getBiome(blockPos);
                 Optional<ResourceKey<Biome>> biomeKey = biomeHolder.unwrapKey();
                 SoundEvent sounds = null;
@@ -59,12 +60,10 @@ public class WildLife {
                             sounds = Sounds.SEABIRD.get();
                             break;
                         default:
-                            if(temperature >= 15.0f && temperature <= 25.0f ){
+                            if(temperature >= 10.0f && temperature <= 20.0f && rainfall >= 200f)
                                 sounds = Sounds.SPRING.get();
-                            }
-                            if(temperature >= 25.0f){
+                            if(temperature >= 20.0f && rainfall >= 300f)
                                 sounds = Sounds.SUMMER.get();
-                            }
                     }
                 }
                 if(sounds!=null) {
