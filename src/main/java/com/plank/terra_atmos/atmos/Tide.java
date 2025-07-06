@@ -55,8 +55,10 @@ public class Tide {
                         default -> null;
                     };
                 }
+                float light = (float)(level.getBrightness(LightLayer.SKY, player.blockPosition()) + 5) /20;
+                float height = (float)(py-60) / 30;
                 if (sound != null) {
-                    manager.play(new SimpleSoundInstance(sound, SoundSource.AMBIENT,  1.0f - ((float)(py-60) / 30), 1.0F, random, px + dx / v, py + dy / v, pz + dz / v));
+                    manager.play(new SimpleSoundInstance(sound, SoundSource.AMBIENT, Math.max(light - height, 0.1f), 1.0F, random, px + dx / v, py + dy / v, pz + dz / v));
                 }
                 moodiness = 0.0F;
             }

@@ -33,16 +33,19 @@ public class Wind {
         double py = player.getEyeY();
         double pz = player.getZ();
         float force = (float)Math.sqrt((wind.x * wind.x) + (wind.y * wind.y));
+        float voice;
         BlockPos blockPos = BlockPos.containing(px + (double)random.nextInt(17) - 8, py + (double)random.nextInt(17) - 8, pz + (double)random.nextInt(17) - 8);
         int brightness = level.getBrightness(LightLayer.SKY, blockPos);
-        float magnification = 0.005f;
+        float magnification = 0.002f;
         if(level.dimension().location().getPath().equals("overworld") && py >= 60) {
             if (brightness > 5) moodiness += (float) brightness * force * magnification / 15;
             else moodiness = Math.max(moodiness - (magnification / 20), 0.0f);
+            voice = (float) (level.getBrightness(LightLayer.SKY, player.blockPosition()) + 5) /20;
         }
         else {
             if (brightness < 5) moodiness += (float) brightness * force * magnification / 15;
             else moodiness = Math.max(moodiness - (magnification / 20), 0.0f);
+            voice = (float) (Math.random() *0.5 + 0.5);
         }
         if (moodiness >= 1.0F) {
             double dx = (double)blockPos.getX() + 0.5D - px;
@@ -68,7 +71,7 @@ public class Wind {
             SimpleSoundInstance sound = new SimpleSoundInstance(
                     this.sound,
                     SoundSource.AMBIENT,
-                    1.0f,
+                    voice,
                     1.0F,
                     random,
                     px + dx / v,

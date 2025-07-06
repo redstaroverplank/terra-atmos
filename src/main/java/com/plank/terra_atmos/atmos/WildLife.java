@@ -35,7 +35,7 @@ public class WildLife {
             RandomSource random = level.getRandom();
             BlockPos blockPos = BlockPos.containing(px + (double)random.nextInt(17) - 8, py + (double)random.nextInt(17) - 8, pz + (double)random.nextInt(17) - 8);
             int brightness = level.getBrightness(LightLayer.SKY, blockPos);
-            float magnification = 0.002f;
+            float magnification = 0.0009f;
             if (level.dimension().location().getPath().equals("overworld") && py >= 64 && py <= 128 && brightness > 5)
                 moodiness += (float) brightness * magnification / 15;
             else moodiness = Math.max(moodiness - (magnification / 20), 0.0f);
@@ -71,7 +71,7 @@ public class WildLife {
                     SimpleSoundInstance sound = new SimpleSoundInstance(
                             sounds,
                             SoundSource.AMBIENT,
-                            1.0f,
+                            (float) (level.getBrightness(LightLayer.SKY, player.blockPosition()) + 5) /20,
                             1.0F,
                             random,
                             px + dx / v,
