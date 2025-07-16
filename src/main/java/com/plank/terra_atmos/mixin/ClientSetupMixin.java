@@ -26,7 +26,7 @@ import java.util.Objects;
 
 @Mixin(ClientSetup.class)
 public class ClientSetupMixin {
-    @Inject(method = "playDropSound", at = @At("HEAD"), cancellable = true)
+    @Inject(method = "playDropSound", at = @At("HEAD"), remap = false, cancellable = true)
     private static void playDropSound(ItemEntity itemEntity, CallbackInfo ci) {
         if (!Configuration.SOUND.get()) {
             return;
