@@ -54,11 +54,16 @@
         "sounds": [
             "terra_atmos:wildlife/critter4",
             "terra_atmos:wildlife/critter5",
-            "terra_atmos:wildlife/critter6",
-            "terra_atmos:wildlife/critter7",
             "terra_atmos:wildlife/critter8"
         ],
         "subtitle": "subtitles.ambient.terra_atmos.wildlife.summer"
+    },
+    "ambient.katydid": {
+        "sounds": [
+            "terra_atmos:wildlife/critter6",
+            "terra_atmos:wildlife/critter7"
+        ],
+        "subtitle": "subtitles.ambient.terra_atmos.wildlife.spring"
     },
     "ambient.bird": {
         "sounds": [
@@ -75,7 +80,17 @@
         ],
         "subtitle": "subtitles.ambient.terra_atmos.wildlife.spring"
     },
-    "ambient.seabird": {
+    "ambient.seagull": {
+        "sounds": [
+            "terra_atmos:wildlife/seagulls_ambient1",
+            "terra_atmos:wildlife/seagulls_ambient2",
+            "terra_atmos:wildlife/seagulls_ambient3",
+            "terra_atmos:wildlife/seagulls_ambient4",
+            "terra_atmos:wildlife/seagulls_ambient5"
+        ],
+        "subtitle": "subtitles.ambient.terra_atmos.wildlife.sea"
+    },
+    "ambient.coastbird": {
         "sounds": [
             "terra_atmos:wildlife/coastbird1",
             "terra_atmos:wildlife/coastbird2",
@@ -83,12 +98,7 @@
             "terra_atmos:wildlife/coastbird4",
             "terra_atmos:wildlife/coastbird5",
             "terra_atmos:wildlife/coastbird6",
-            "terra_atmos:wildlife/coastbird7",
-            "terra_atmos:wildlife/seagulls_ambient1",
-            "terra_atmos:wildlife/seagulls_ambient2",
-            "terra_atmos:wildlife/seagulls_ambient3",
-            "terra_atmos:wildlife/seagulls_ambient4",
-            "terra_atmos:wildlife/seagulls_ambient5"
+            "terra_atmos:wildlife/coastbird7"
         ],
         "subtitle": "subtitles.ambient.terra_atmos.wildlife.sea"
     },

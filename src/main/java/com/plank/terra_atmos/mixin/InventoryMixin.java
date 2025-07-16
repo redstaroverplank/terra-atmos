@@ -2,6 +2,8 @@ package com.plank.terra_atmos.mixin;
 
 import com.plank.terra_atmos.Sounds;
 import com.plank.terra_atmos.Tags;
+import net.dries007.tfc.common.capabilities.size.IItemSize;
+import net.dries007.tfc.common.capabilities.size.ItemSizeManager;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.player.Inventory;
@@ -39,14 +41,7 @@ public abstract class InventoryMixin {
         if (currentSlot != terra_atmos$lastSelectedSlot) {
             SoundEvent sound = Sounds.DEFAULT.get();
             ItemStack currentItem = getItem(currentSlot);
-            // 可配置参数
-            final float MIN_VOLUME = 0.6f;    // 最小音量
-            final float MAX_VOLUME = 1.0f;    // 最大音量
-            final float CURVE_FACTOR = 0.5f;  // 曲线陡度 (0.1-1.0，值越小变化越陡)
-            int count = currentItem.getCount();
-            int maxStackSize = currentItem.getMaxStackSize();
-            float stackRatio = (float) count / maxStackSize;
-            float volume = Math.min(Math.max(MIN_VOLUME + (MAX_VOLUME - MIN_VOLUME) * (float) Math.pow(stackRatio, CURVE_FACTOR), MIN_VOLUME), MAX_VOLUME);
+            IItemSize ISize = ItemSizeManager.get(currentItem);
 
             if (currentItem.is(Tags.ARMOR)) sound = Sounds.ARMOR.get();
             if (currentItem.is(Tags.TOOL)) sound = Sounds.TOOL.get();
@@ -54,7 +49,14 @@ public abstract class InventoryMixin {
             if (currentItem.is(Tags.MELEE_WEAPON)) sound = Sounds.MELEE_WEAPON.get();
             if (currentItem.is(Tags.FOOD)) sound = Sounds.FOOD.get();
             if (!currentItem.isEmpty()) {
-                player.level().playSound(null, player.blockPosition(), sound, SoundSource.PLAYERS, volume, 1.0f);
+                player.level().playSound(
+                        null,
+                        player.blockPosition(),
+                        sound,
+                        SoundSource.PLAYERS,
+                        Sounds.volume(ISize.getWeight(currentItem)),
+                        Sounds.pitch(ISize.getSize(currentItem))
+                );
             }
             terra_atmos$lastSelectedSlot = currentSlot;
         }

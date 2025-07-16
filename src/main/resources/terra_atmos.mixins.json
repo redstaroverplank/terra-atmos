@@ -6,6 +6,7 @@
   "refmap": "terra_atmos.refmap.json",
   "mixins": [
     "BarrelBlockEntityMixin",
+    "ClientSetupMixin",
     "InventoryMixin"
   ],
   "client": [

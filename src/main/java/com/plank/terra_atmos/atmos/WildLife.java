@@ -57,13 +57,28 @@ public class WildLife {
                         case "tidal_flats":
                         case "ocean":
                         case "ocean_reef":
-                            sounds = Sounds.SEABIRD.get();
+                            if(level.isDay()) sounds = Sounds.SEAGULL.get();
+                            else sounds = Sounds.COASTBIRD.get();
                             break;
                         default:
-                            if(temperature >= 10.0f && temperature <= 20.0f && rainfall >= 200f)
-                                sounds = Sounds.SPRING.get();
-                            if(temperature >= 20.0f && rainfall >= 300f)
-                                sounds = Sounds.SUMMER.get();
+                            if(temperature >= 10.0f && temperature <= 20.0f && rainfall >= 200f) {
+                                if(level.isDay()) sounds = Sounds.BIRD.get();
+                                else sounds = Sounds.KATYDID.get();
+                            }
+                            if(level.isDay() && temperature >= 20.0f && rainfall >= 300f) {
+                                SimpleSoundInstance sound = new SimpleSoundInstance(
+                                        Sounds.CICADA.get(),
+                                        SoundSource.AMBIENT,
+                                        (float) (level.getBrightness(LightLayer.SKY, player.blockPosition()) + 5) /20,
+                                        1.0F,
+                                        random,
+                                        px + dx / v,
+                                        py + dy / v,
+                                        pz + dz / v);
+                                manager.play(sound);
+                                TerraAtmos.ClientDelayHandler.schedule(100, () -> manager.play(sound));
+                                TerraAtmos.ClientDelayHandler.schedule(200, () -> manager.play(sound));
+                            }
                     }
                 }
                 if(sounds!=null) {
