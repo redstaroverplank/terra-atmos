@@ -1,6 +1,5 @@
 package com.plank.terra_atmos;
 
-import com.lootbeams.Configuration;
 import net.dries007.tfc.common.capabilities.size.Size;
 import net.dries007.tfc.common.capabilities.size.Weight;
 import net.minecraft.core.registries.Registries;
@@ -38,13 +37,12 @@ public class Sounds {
     public static final RegistryObject<SoundEvent> DEFAULT = create("entity.player.draw.generic");
 
     public static float volume(Weight weight) {
-        float baseVolume = Configuration.SOUND_VOLUME.get().floatValue();
-        float weightFactor = 1.0f + weight.ordinal() * 0.1f; // 每级重量增加10%音量
-        return baseVolume * weightFactor;
+        // 每级重量增加10%音量
+        return (float) weight.ordinal() / (Weight.values().length - 1) * 0.5f + 0.5f;
     }
     public static float pitch(Size size) {
         // 将物品大小映射到0.0-1.0范围
-        float sizeRatio = 1.0f - (size.ordinal() / (float) (Size.values().length - 1));
+        float sizeRatio = 1.0f - ((float) size.ordinal() / (Size.values().length - 1));
         // 使用公式计算音调
         return NoteBlock.getPitchFromNote((int) Math.ceil(sizeRatio * 24));
     }

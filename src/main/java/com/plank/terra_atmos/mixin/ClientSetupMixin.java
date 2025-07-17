@@ -44,7 +44,7 @@ public class ClientSetupMixin {
                     itemEntity.blockPosition(),
                     SoundEvent.createFixedRangeEvent(LootBeams.LOOT_DROP, 8),
                     SoundSource.AMBIENT,
-                    Sounds.volume(ISize.getWeight(stack)),
+                    Sounds.volume(ISize.getWeight(stack)) * Configuration.SOUND_VOLUME.get().floatValue(),
                     Sounds.pitch(ISize.getSize(stack))
             );
         }
