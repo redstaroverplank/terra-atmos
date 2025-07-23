@@ -33,7 +33,7 @@ public class Tide {
             double pz = player.getZ();
             BlockPos blockPos = BlockPos.containing(px + (double)random.nextInt(17) - 8, py + (double)random.nextInt(17) - 8, pz + (double)random.nextInt(17) - 8);
             int brightness = level.getBrightness(LightLayer.SKY, blockPos);
-            float magnification = 0.01f;
+            float magnification = 2.0f;
             if (level.dimension().location().getPath().equals("overworld") && py >= 60 && py <= 90 && brightness > 5)
                 moodiness += (float) brightness * magnification / 15;
             else moodiness = Math.max(moodiness - (magnification / 20), 0.0f);

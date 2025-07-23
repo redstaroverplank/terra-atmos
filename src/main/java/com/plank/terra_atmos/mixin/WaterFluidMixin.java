@@ -25,12 +25,35 @@ public class WaterFluidMixin {
     public void tick(Level level, BlockPos pos, FluidState state, RandomSource source, CallbackInfo ci){
         if (!state.isSource() && !state.getValue(FALLING)) {
             if (source.nextInt(256) == 0) {
-                level.playLocalSound((double)pos.getX() + 0.5D, (double)pos.getY() + 0.5D, (double)pos.getZ() + 0.5D, Sounds.WATER_AMBIENT.get(), SoundSource.BLOCKS, source.nextFloat() * 0.25F + 0.75F, source.nextFloat() + 0.5F, false);
+                level.playLocalSound(
+                        pos.getX() + 0.5D,
+                        pos.getY() + 0.5D,
+                        pos.getZ() + 0.5D,
+                        Sounds.WATER_AMBIENT.get(),
+                        SoundSource.BLOCKS,
+                        source.nextFloat() * 0.25F + 0.75F,
+                        source.nextFloat() + 0.5F,
+                        false);
             }
         } else if (source.nextInt(10) == 0) {
-            level.addParticle(ParticleTypes.UNDERWATER, (double)pos.getX() + source.nextDouble(), (double)pos.getY() + source.nextDouble(), (double)pos.getZ() + source.nextDouble(), 0.0D, 0.0D, 0.0D);
+            level.addParticle(
+                    ParticleTypes.UNDERWATER,
+                    pos.getX() + source.nextDouble(),
+                    pos.getY() + source.nextDouble(),
+                    pos.getZ() + source.nextDouble(),
+                    0.0D,
+                    0.0D,
+                    0.0D);
         } else if(state.getType() == TFCFluids.RIVER_WATER.get() && source.nextInt(256) == 0){
-            level.playLocalSound((double)pos.getX() + 0.5D, (double)pos.getY() + 0.5D, (double)pos.getZ() + 0.5D, Sounds.WATER_AMBIENT.get(), SoundSource.BLOCKS, 0.75F, 0.5F, false);
+            level.playLocalSound(
+                    pos.getX() + 0.5D,
+                    pos.getY() + 0.5D,
+                    pos.getZ() + 0.5D,
+                    Sounds.WATER_AMBIENT.get(),
+                    SoundSource.BLOCKS,
+                    0.75F,
+                    0.5F,
+                    false);
         }
         ci.cancel();
     }

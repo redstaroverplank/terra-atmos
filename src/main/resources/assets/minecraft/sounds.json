@@ -1,11 +1,13 @@
 {
     "entity.player.splash": {
+        "replace": true,
         "sounds": [
             "terra_atmos:water/water_jumpin"
         ],
         "subtitle": "subtitles.entity.generic.splash"
     },
     "entity.player.splash.high_speed": {
+        "replace": true,
         "sounds": [
             "terra_atmos:water/water_divein"
         ],
@@ -41,6 +43,7 @@
         ]
     },
     "entity.generic.big_fall": {
+        "replace": true,
         "sounds": [
             "terra_atmos:fallbig1",
             "terra_atmos:fallbig2"
