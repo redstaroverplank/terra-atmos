@@ -1,0 +1,32 @@
+{
+  "loot_drop": {
+    "replace": true,
+    "sounds": [
+      {
+        "name": "block/pointed_dripstone/land1",
+        "stream": true,
+        "weight": 1
+      },
+      {
+        "name": "block/pointed_dripstone/land2",
+        "stream": true,
+        "weight": 1
+      },
+      {
+        "name": "block/pointed_dripstone/land3",
+        "stream": true,
+        "weight": 1
+      },
+      {
+        "name": "block/pointed_dripstone/land4",
+        "stream": true,
+        "weight": 1
+      },
+      {
+        "name": "block/pointed_dripstone/land5",
+        "stream": true,
+        "weight": 1
+      }
+    ]
+  }
+}

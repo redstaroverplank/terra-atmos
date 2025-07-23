@@ -11,7 +11,8 @@
   ],
   "client": [
     "Core",
-    "WaterFluidMixin"
+    "WaterFluidMixin",
+    "WindParticleMixin"
   ],
   "injectors": {
     "defaultRequire": 1
