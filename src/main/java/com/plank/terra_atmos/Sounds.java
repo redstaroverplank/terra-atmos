@@ -38,7 +38,7 @@ public class Sounds {
 
     public static float volume(Weight weight) {
         // 每级重量增加10%音量
-        return (float) weight.ordinal() / (Weight.values().length - 1) * 0.5f + 0.5f;
+        return (float) weight.ordinal() / (Weight.values().length - 1) * 0.5f + 0.25f;
     }
     public static float pitch(Size size) {
         // 将物品大小映射到0.0-1.0范围

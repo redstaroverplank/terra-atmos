@@ -30,7 +30,7 @@ public class Cave {
             double py = player.getEyeY();
             double pz = player.getZ();
             float force = (float)Math.sqrt((wind.x * wind.x) + (wind.y * wind.y));
-            float voice = (float) (Math.random() *0.5 + 0.5);
+            float voice = (float) (Math.random() * 0.5 + 0.25);
             BlockPos blockPos = BlockPos.containing(px + (double)random.nextInt(17) - 8, py + (double)random.nextInt(17) - 8, pz + (double)random.nextInt(17) - 8);
             int brightness = level.getBrightness(LightLayer.SKY, blockPos);
             float magnification = 1.0f;
