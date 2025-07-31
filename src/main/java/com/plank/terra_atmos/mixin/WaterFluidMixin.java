@@ -24,7 +24,7 @@ public class WaterFluidMixin {
     @Inject(method = "animateTick", at = @At("HEAD"), cancellable = true)
     public void tick(Level level, BlockPos pos, FluidState state, RandomSource source, CallbackInfo ci){
         if (!state.isSource() && !state.getValue(FALLING)) {
-            if (source.nextInt(256) == 0) {
+            if (source.nextInt(128) == 0) {
                 level.playLocalSound(
                         pos.getX() + 0.5D,
                         pos.getY() + 0.5D,
@@ -44,7 +44,7 @@ public class WaterFluidMixin {
                     0.0D,
                     0.0D,
                     0.0D);
-        } else if(state.getType() == TFCFluids.RIVER_WATER.get() && source.nextInt(256) == 0){
+        } else if(state.getType() == TFCFluids.RIVER_WATER.get() && source.nextInt(192) == 0){
             level.playLocalSound(
                     pos.getX() + 0.5D,
                     pos.getY() + 0.5D,
