@@ -13,10 +13,7 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LightLayer;
 import net.minecraft.world.phys.Vec2;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 
-@OnlyIn(Dist.CLIENT)
 public class Cave {
     private static float moodiness = 0.0f;
     private static final LocalPlayer player = (LocalPlayer) ClientHelpers.getPlayer();

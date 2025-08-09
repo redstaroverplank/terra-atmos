@@ -8,10 +8,10 @@
     "BarrelBlockEntityMixin",
     "ClientSetupMixin",
     "InventoryMixin",
-    "ClientForgeEventHandlerMixin"
+    "ClientForgeEventHandlerMixin",
+    "WaterFluidMixin"
   ],
   "client": [
-    "WaterFluidMixin"
   ],
   "injectors": {
     "defaultRequire": 1
