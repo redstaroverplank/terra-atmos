@@ -2,7 +2,6 @@ package com.plank.terra_atmos.mixin;
 
 import com.plank.terra_atmos.Sounds;
 import com.plank.terra_atmos.Tags;
-import com.tacz.guns.api.item.gun.AbstractGunItem;
 import net.dries007.tfc.common.capabilities.size.IItemSize;
 import net.dries007.tfc.common.capabilities.size.ItemSizeManager;
 import net.minecraft.sounds.SoundEvent;
@@ -56,7 +55,7 @@ public abstract class InventoryMixin {
             if (currentItem.is(Tags.RANGED_WEAPON)) sound = Sounds.RANGED_WEAPON.get();
             if (currentItem.is(Tags.MELEE_WEAPON)) sound = Sounds.MELEE_WEAPON.get();
             if (currentItem.is(Tags.FOOD)) sound = Sounds.FOOD.get();
-            if (!currentItem.isEmpty() && !(currentItem.getItem() instanceof AbstractGunItem)) {
+            if (!currentItem.isEmpty() && !terra_atmos$isAbstractGunItem(currentItem.getItem())) {
                 player.level().playSound(
                         null,
                         player.blockPosition(),
@@ -68,6 +67,15 @@ public abstract class InventoryMixin {
             }
             terra_atmos$lastSelectedSlot = currentSlot;
             terra_atmos$item = currentItem.getItem();
+        }
+    }
+    @Unique
+    private boolean terra_atmos$isAbstractGunItem(Item item) {
+        try {
+            Class<?> gunClass = Class.forName("com.tacz.guns.api.item.gun.AbstractGunItem");
+            return gunClass.isInstance(item);
+        } catch (ClassNotFoundException e) {
+            return false;
         }
     }
     @Shadow
