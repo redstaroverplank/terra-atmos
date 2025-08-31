@@ -58,7 +58,8 @@ public class LootBeamsSoundPlayer {
             WeighedSoundEvents sound = Minecraft.getInstance().getSoundManager().getSoundEvent(LootBeams.LOOT_DROP);
             if(sound != null && Minecraft.getInstance().level != null) {
                 Minecraft.getInstance().level.playSound(
-                        Minecraft.getInstance().player, itemEntity.blockPosition(),
+                        Minecraft.getInstance().player,
+                        itemEntity.getX(), itemEntity.getY(), itemEntity.getZ(),
                         SoundEvent.createFixedRangeEvent(LootBeams.LOOT_DROP, 8.0f),
                         SoundSource.AMBIENT,
                         Sounds.volume(size.getWeight(stack)) * Configuration.SOUND_VOLUME.get().floatValue(),
