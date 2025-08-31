@@ -1,4 +1,4 @@
-package com.plank.terra_atmos;
+package com.plank.terra_atmos.sounds;
 
 import net.dries007.tfc.common.capabilities.size.Size;
 import net.dries007.tfc.common.capabilities.size.Weight;

@@ -1,6 +1,6 @@
-package com.plank.terra_atmos.atmos;
+package com.plank.terra_atmos.sounds.atmos;
 
-import com.plank.terra_atmos.Sounds;
+import com.plank.terra_atmos.sounds.Sounds;
 import com.plank.terra_atmos.TerraAtmos;
 import net.dries007.tfc.client.ClientHelpers;
 import net.dries007.tfc.util.climate.Climate;

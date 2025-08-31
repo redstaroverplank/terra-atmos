@@ -1,8 +1,8 @@
 package com.plank.terra_atmos.mixin;
 
-import com.plank.terra_atmos.atmos.Cave;
-import com.plank.terra_atmos.atmos.Tide;
-import com.plank.terra_atmos.atmos.WildLife;
+import com.plank.terra_atmos.sounds.atmos.Cave;
+import com.plank.terra_atmos.sounds.atmos.Tide;
+import com.plank.terra_atmos.sounds.atmos.WildLife;
 import net.dries007.tfc.client.ClientForgeEventHandler;
 import net.dries007.tfc.client.ClientHelpers;
 import net.dries007.tfc.client.ClimateRenderCache;
@@ -12,7 +12,7 @@ import net.dries007.tfc.util.calendar.Season;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.sounds.SoundEvent;
-import com.plank.terra_atmos.Sounds;
+import com.plank.terra_atmos.sounds.Sounds;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.player.Player;

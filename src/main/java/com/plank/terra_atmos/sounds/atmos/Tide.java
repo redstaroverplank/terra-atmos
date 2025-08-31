@@ -1,6 +1,6 @@
-package com.plank.terra_atmos.atmos;
+package com.plank.terra_atmos.sounds.atmos;
 
-import com.plank.terra_atmos.Sounds;
+import com.plank.terra_atmos.sounds.Sounds;
 import net.dries007.tfc.client.ClientHelpers;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.LocalPlayer;

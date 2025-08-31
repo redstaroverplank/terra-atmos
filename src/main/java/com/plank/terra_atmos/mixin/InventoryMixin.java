@@ -1,6 +1,6 @@
 package com.plank.terra_atmos.mixin;
 
-import com.plank.terra_atmos.Sounds;
+import com.plank.terra_atmos.sounds.Sounds;
 import com.plank.terra_atmos.Tags;
 import net.dries007.tfc.common.capabilities.size.IItemSize;
 import net.dries007.tfc.common.capabilities.size.ItemSizeManager;

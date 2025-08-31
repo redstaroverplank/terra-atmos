@@ -1,5 +1,6 @@
 package com.plank.terra_atmos;
 
+import com.plank.terra_atmos.sounds.Sounds;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.IEventBus;

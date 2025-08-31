@@ -150,6 +150,9 @@ dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
     implementation files('libs/TerraFirmaCraft-Forge-1.20.1-3.2.14.jar')
     implementation files('libs/lootbeams-1.20.1-1.2.6.jar')
+    implementation files('libs/Loot Beams Refork-forge-1.20.1-3.2.6.jar')
+    implementation files('libs/fzzy_config-0.7.2+1.20.1+forge.jar')
+    implementation files('libs/Nirvana Lib-forge-1.20.1-2.0.15.jar')
     implementation files('libs/tacz-1.20.1-1.1.6-hotfix.jar')
 
     // Example mod dependency with JEI - using fg.deobf() ensures the dependency is remapped to your development mappings

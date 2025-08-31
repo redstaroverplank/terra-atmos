@@ -1,8 +1,10 @@
-package com.plank.terra_atmos;
+package com.plank.terra_atmos.sounds.lootbeams;
 
 import com.lootbeams.Configuration;
 import com.lootbeams.LootBeams;
 import com.lootbeams.compat.ApotheosisCompat;
+import com.plank.terra_atmos.TerraAtmos;
+import com.plank.terra_atmos.sounds.Sounds;
 import net.dries007.tfc.common.capabilities.size.IItemSize;
 import net.dries007.tfc.common.capabilities.size.ItemSizeManager;
 import net.minecraft.client.Minecraft;

@@ -1,6 +1,6 @@
 package com.plank.terra_atmos.mixin;
 
-import com.plank.terra_atmos.Sounds;
+import com.plank.terra_atmos.sounds.Sounds;
 import net.dries007.tfc.common.fluids.TFCFluids;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
