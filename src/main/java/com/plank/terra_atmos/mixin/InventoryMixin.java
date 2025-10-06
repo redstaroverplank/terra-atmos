@@ -2,6 +2,7 @@ package com.plank.terra_atmos.mixin;
 
 import com.plank.terra_atmos.sounds.Sounds;
 import com.plank.terra_atmos.Tags;
+import com.plank.terra_atmos.utils.Size;
 import net.dries007.tfc.common.capabilities.size.IItemSize;
 import net.dries007.tfc.common.capabilities.size.ItemSizeManager;
 import net.minecraft.sounds.SoundEvent;
@@ -61,8 +62,8 @@ public abstract class InventoryMixin {
                         player.blockPosition(),
                         sound,
                         SoundSource.PLAYERS,
-                        Sounds.volume(ISize.getWeight(currentItem)),
-                        Sounds.pitch(ISize.getSize(currentItem))
+                        Size.volume(ISize.getWeight(currentItem)),
+                        Size.pitch(ISize.getSize(currentItem))
                 );
             }
             terra_atmos$lastSelectedSlot = currentSlot;

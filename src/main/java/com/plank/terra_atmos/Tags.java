@@ -8,7 +8,7 @@ import net.minecraft.world.item.Item;
 public class Tags {
     private static TagKey<Item> create(String id)
     {
-        return TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("terra_atmos", id));
+        return TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(TerraAtmos.MODID, id));
     }
     public static final TagKey<Item> RANGED_WEAPON = create("ranged_weapon");
     public static final TagKey<Item> MELEE_WEAPON = create("melee_weapon");

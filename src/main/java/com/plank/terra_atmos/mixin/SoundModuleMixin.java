@@ -1,6 +1,6 @@
 package com.plank.terra_atmos.mixin;
 
-import com.plank.terra_atmos.sounds.lootbeams.LootBeamsReforkSoundPlayer;
+import com.plank.terra_atmos.sounds.LootBeamsReforkSoundPlayer;
 import me.clefal.lootbeams.events.EntityRenderDispatcherHookEvent;
 import me.clefal.lootbeams.modules.sound.SoundModule;
 import org.spongepowered.asm.mixin.Mixin;

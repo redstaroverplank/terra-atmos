@@ -1,10 +1,10 @@
-package com.plank.terra_atmos.sounds.lootbeams;
+package com.plank.terra_atmos.sounds;
 
 import com.lootbeams.Configuration;
 import com.lootbeams.LootBeams;
 import com.lootbeams.compat.ApotheosisCompat;
 import com.plank.terra_atmos.TerraAtmos;
-import com.plank.terra_atmos.sounds.Sounds;
+import com.plank.terra_atmos.utils.Size;
 import net.dries007.tfc.common.capabilities.size.IItemSize;
 import net.dries007.tfc.common.capabilities.size.ItemSizeManager;
 import net.minecraft.client.Minecraft;
@@ -62,8 +62,8 @@ public class LootBeamsSoundPlayer {
                         itemEntity.getX(), itemEntity.getY(), itemEntity.getZ(),
                         SoundEvent.createFixedRangeEvent(LootBeams.LOOT_DROP, 8.0f),
                         SoundSource.AMBIENT,
-                        Sounds.volume(size.getWeight(stack)) * Configuration.SOUND_VOLUME.get().floatValue(),
-                        Sounds.pitch(size.getSize(stack)));
+                        Size.volume(size.getWeight(stack)) * Configuration.SOUND_VOLUME.get().floatValue(),
+                        Size.pitch(size.getSize(stack)));
                 playSoundCooldown = 3;
             }
         }

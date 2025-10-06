@@ -31,6 +31,13 @@
         ],
         "subtitle": "subtitles.ambient.terra_atmos.wind"
     },
+    "ambient.wind.lake": {
+        "sounds": [
+            "terra_atmos:water/lake1",
+            "terra_atmos:water/lake2",
+            "terra_atmos:water/lake3"
+        ]
+    },
     "ambient.wave": {
         "sounds": [
             "terra_atmos:water/wave1",
@@ -41,14 +48,6 @@
             "terra_atmos:water/wave6"
         ],
         "subtitle": "subtitles.ambient.terra_atmos.wave"
-    },
-    "ambient.water": {
-        "sounds": [
-            "terra_atmos:water/lake1",
-            "terra_atmos:water/lake2",
-            "terra_atmos:water/lake3"
-        ],
-        "subtitle": "subtitles.ambient.terra_atmos.water"
     },
     "ambient.cicada": {
         "sounds": [
@@ -101,14 +100,6 @@
             "terra_atmos:wildlife/coastbird7"
         ],
         "subtitle": "subtitles.ambient.terra_atmos.wildlife.sea"
-    },
-    "ambient.cave": {
-        "sounds": [
-            "terra_atmos:cave/rumble1",
-            "terra_atmos:cave/rumble2",
-            "terra_atmos:cave/rumble3"
-        ],
-        "subtitle": "subtitles.ambient.sound"
     },
     "block.water.ambient": {
         "sounds": [

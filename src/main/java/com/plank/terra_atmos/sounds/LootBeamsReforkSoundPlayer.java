@@ -1,6 +1,6 @@
-package com.plank.terra_atmos.sounds.lootbeams;
+package com.plank.terra_atmos.sounds;
 
-import com.plank.terra_atmos.sounds.Sounds;
+import com.plank.terra_atmos.utils.Size;
 import me.clefal.lootbeams.LootBeamsConstants;
 import me.clefal.lootbeams.config.configs.SoundConfig;
 import me.clefal.lootbeams.data.lbitementity.LBItemEntity;
@@ -42,8 +42,8 @@ public class LootBeamsReforkSoundPlayer {
                         itemEntity.getX(), itemEntity.getY(), itemEntity.getZ(),
                         SoundEvent.createFixedRangeEvent(LootBeamsConstants.LOOT_DROP, 8.0f),
                         SoundSource.AMBIENT,
-                        Sounds.volume(size.getWeight(stack)) * SoundConfig.soundConfig.sound.sound_volume.get(),
-                        Sounds.pitch(size.getSize(stack)));
+                        Size.volume(size.getWeight(stack)) * SoundConfig.soundConfig.sound.sound_volume.get(),
+                        Size.pitch(size.getSize(stack)));
                 event.LBItemEntity.updateSounded();
             }
         }
