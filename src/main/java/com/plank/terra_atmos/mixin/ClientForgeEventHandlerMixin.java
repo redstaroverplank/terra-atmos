@@ -1,5 +1,6 @@
 package com.plank.terra_atmos.mixin;
 
+import com.plank.terra_atmos.sounds.Wave;
 import com.plank.terra_atmos.sounds.WildLife;
 import com.plank.terra_atmos.utils.Geography;
 import net.dries007.tfc.client.ClientForgeEventHandler;
@@ -67,6 +68,7 @@ public abstract class ClientForgeEventHandlerMixin implements Geography {
                 }
             }
             new WildLife().playSound(level, player);
+            new Wave().playSound(level, player);
         }
         ci.cancel();
     }

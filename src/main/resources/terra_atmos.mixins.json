@@ -9,8 +9,8 @@
     "ClientSetupMixin",
     "InventoryMixin",
     "SoundModuleMixin",
-    "ClientForgeEventHandlerMixin",
-    "WaterFluidMixin"
+    "WaterFluidMixin",
+    "ClientForgeEventHandlerMixin"
   ],
   "client": [
   ],
