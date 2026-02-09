@@ -14,9 +14,8 @@ public class WildLife {
 
     }
     public void playSound(Level level, Player player) {
-        if (level.dimension().location().getPath().equals("overworld") && Math.random() <= 0.0025) {
+        if (Math.random() <= 0.0025 && level.dimension().location().getPath().equals("overworld")) {
             BlockPos blockPos = player.blockPosition();
-            if(level.isRainingAt(blockPos)) return;
             float temperature = Geography.getTemperature(level, blockPos);
             float rainfall = Geography.getRainfall(level, blockPos);
             if (temperature < 10.0f || rainfall <= 200f) return;
@@ -26,23 +25,24 @@ public class WildLife {
                 case "tidal_flats":
                 case "ocean":
                 case "ocean_reef":
-                    if (isDay(level.getDayTime())) playSound(level, player, 75, Sounds.SEAGULL.get(), 80, 3);
-                    else playSound(level, player, blockPos.getY(), Sounds.COASTBIRD.get(), 20, 5);
+                    if (isDay(level.getDayTime())) playSound(level, player, false, Sounds.SEAGULL.get(), 80, 3);
+                    else playSound(level, player, true, Sounds.COASTBIRD.get(), 20, 5);
                     break;
                 default:
                     if (temperature <= 20.0f) {
-                        if (isDay(level.getDayTime())) playSound(level, player, blockPos.getY() + 5, Sounds.BIRD.get(), 20, 7);
-                        else playSound(level, player, blockPos.getY(), Sounds.KATYDID.get(), 20, 7);
+                        if (isDay(level.getDayTime())) playSound(level, player, false, Sounds.BIRD.get(), 20, 7);
+                        else playSound(level, player, true, Sounds.KATYDID.get(), 20, 7);
                     } else if (rainfall >= 300f)
-                        playSound(level, player, blockPos.getY() + 5, Sounds.CICADA.get(), 60, 2);
+                        playSound(level, player, false, Sounds.CICADA.get(), 60, 2);
             }
         }
     }
-    private static void playSound(Level level, Player player, double Y, SoundEvent sound, int wait, int time){
-        BlockPos blockPos = player.blockPosition();
-        for(int i = 0; i < time; i++){
+    private static void playSound(Level level, Player player, boolean OnGround, SoundEvent sound, int wait, int times){
+        BlockPos blockPos = OnGround ? player.blockPosition() : player.blockPosition().offset(0, 5, 0);
+        if(level.isRainingAt(blockPos)) return;
+        for(int i = 0; i < times; i++){
             final double x = blockPos.getX() + Mth.nextDouble(level.random, -6, 6);
-            final double y = Y + Mth.nextDouble(level.random, -1, 6);
+            final double y = blockPos.getY() + Mth.nextDouble(level.random, -1, 1);
             final double z = blockPos.getZ() + Mth.nextDouble(level.random, -6, 6);
             ClientDelayHandler.schedule(i * wait, () -> level.playSound(player, x, y, z, sound, SoundSource.AMBIENT, 1.0f, 1.0f));
         }
